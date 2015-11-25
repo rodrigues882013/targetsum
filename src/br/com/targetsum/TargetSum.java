@@ -1,5 +1,5 @@
 /**
- * Created by frodrigues on 24/11/15.
+ * Created by frodrigues.
  */
 
 package br.com.targetsum;
@@ -21,12 +21,7 @@ public class TargetSum {
 
     public void populateSubset(int[] data, int fromIndex, int endIndex) {
 
-        /*
-        * Check if sum of elements stored in Stack is equal to the expected
-        * target sum.
-        *
-        * If so, call print method to print the candidate satisfied result.
-        */
+
         if (sumInStack == targetSum) {
             print(stack);
         }
@@ -37,10 +32,7 @@ public class TargetSum {
                 stack.push(data[currentIndex]);
                 sumInStack += data[currentIndex];
 
-                /*
-                * Make the currentIndex +1, and then use recursion to proceed
-                * further.
-                */
+
                 populateSubset(data, currentIndex + 1, endIndex);
                 sumInStack -= (Integer) stack.pop();
             }
